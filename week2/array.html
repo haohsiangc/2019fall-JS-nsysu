@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>array</title>
+	<script>
+		var array = ['element1' , 'element2' , 1 , 2];
+		document.writeln("array -> "+array+"<br>"); //print array
+
+		document.writeln("array.length -> "+array.length+"<br>"); //print array length
+
+		document.writeln("array[1] -> "+array[1]+"<br>"); //print index 1 of array
+		document.writeln("array[array.length-2] -> "+array[array.length - 2]+"<br>"); //print index [length-2] of array
+
+		array.push('last_element'); //push 'last_element' into array at last index
+		document.writeln("array.push('last_element') -> "+array+"<br>");
+		array.pop(); //remove last element in array
+		document.writeln("array.pop() -> "+array+"<br>");
+
+		array.shift();
+		document.writeln("array.shift() -> "+array+"<br>");
+		array.unshift('new_element');
+		document.writeln("array.unshift('new_element') -> "+array+"<br>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

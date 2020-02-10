@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery_hide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//all jQuery code here
+			$('p').click(function(){
+				$(this).hide();
+			});
+		});
+
+		//original js hide element method
+		// function hide() {
+		// 	var x = document.getElementsByTagName('p');
+		// 	x[0].style.display = 'none'
+		// }
+		//jQuery method
+		// $(document).ready(function(){
+		// 	$('p').click(function(){
+		// 		$(this).hide();
+		// 	});
+		// });
+	</script>
+</head>
+<body>
+	<p>我忘記微積分了</p>
+</body>
+</html>

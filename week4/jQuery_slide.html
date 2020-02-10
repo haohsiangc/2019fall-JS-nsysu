@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery_slide</title>
+	<style type="text/css">
+		#panel,
+		#flip {
+			padding: 5px;
+			text-align: center;
+			background-color: #e2bc13;
+			border: solid 1px #c3c3c3;
+		}
+		#panel {
+			padding: 50px;
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#flip').click(function () {
+				$('#panel').slideToggle(500);
+			});
+			$('#up').click(function () {
+				$('#panel').slideUp(500);
+			});
+			$('#down').click(function () {
+				$('#panel').slideDown(500);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="flip">點我</div>
+	<div id="panel">滑出來ㄌ</div>
+	<button id="up">slideup</button>
+	<button id="down">slidedown</button>
+</body>
+
+</html>

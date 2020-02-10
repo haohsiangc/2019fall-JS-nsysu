@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery_fade</title>
+	<style type="text/css">
+		#pane,
+		#flip {
+			padding: 5px;
+			text-align: center;
+			background-color: #e2bc13;
+			border: solid 1px #c3c3c3;
+		}
+		#pane {
+			padding: 50px;
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+            $('#out').click(function(){
+                $('#pane').fadeOut(1000);
+            });
+			$('#flip').click(function () {
+				$('#pane').fadeToggle(1000);
+			});
+            $('#in').click(function () {
+                $('#pane').fadeIn(1000);
+            });
+            $('#to').click(function () {
+                $('#pane').fadeTo(1000,0.05);
+            });
+		});
+	</script>
+</head>
+
+<body>
+	<div id="flip">點我</div>
+    <div id="pane">漸層出來ㄌ</div>
+    <button id="in">in</button>
+    <button id="out">out</button>
+    <button id="to">fadeTo</button>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>getElementBy_</title>
+    <style type="text/css">
+        #hello {
+            font-family: NotoSansTC;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="hello" class="demo">Hello World</p>
+    <!-- 	<p id ="World" class="demo"></p> -->
+    <script>
+        // var demo = document.getElementById("hello");
+        // demo.innerHTML = "Hello World!!!!";
+        // demo.style.color = "red";
+        // demo.style.fontSize = "30px";
+        var demo2 = document.getElementsByClassName("demo");
+        demo2[0].innerHTML = "today is so cold";
+        demo2[0].style.color = "blue";
+        demo2[0].style.fontSize = "50px";
+    </script>
+</body>
+
+</html>

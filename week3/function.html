@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>function</title>
+	<script>
+		function factorial_recursive(n){
+			if(n == 0){
+				return 1;
+			}else{
+				return n*factorial_recursive(n - 1);
+			}
+		}
+		function factorial_loop(n){
+			var a = n;
+			for(let i = (n - 1); i > 0; i--){
+				a = a * i;
+			}
+			return a;
+		}
+		var x = prompt("輸入一個數字");
+		var answer_re = factorial_recursive(x);
+		var answer_loop = factorial_loop(x);
+		document.writeln("recursive:"+answer_re);
+		document.writeln("loop:"+answer_loop);
+	</script>
+</head>
+<body>
+</body>
+</html>

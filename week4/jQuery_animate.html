@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery_animate</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+        #box {
+            background: #f0bc2e;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+        }
+		#font {
+			font-size: 24pt;
+			font-family: 'Courier New', Courier, monospace;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$('#down').click(function(){
+                $('#box').animate({
+					left: '100px',
+					width: '+=100',
+					height: '+=100'
+				},250,function(){
+					$('#font').animate({
+						fontSize: '48pt'
+					});
+				});
+            });
+		});
+	</script>
+</head>
+
+<body>
+	<button id="down">move!</button>
+	<div id="box">
+		<p id="font">Hey!</p>
+	</div>
+</body>
+
+</html>

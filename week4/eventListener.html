@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>listener</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        #click_count {
+            text-align: center;
+        }
+        
+        .card {
+            width: 10%;
+            left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img class="card-img-top" id="like" src="./svg/like.svg" alt="good">
+        <div class="card-body">
+            <p class="card-text" id="click_count">0</p>
+        </div>
+    </div>
+    <script>
+        var ifclicked = new Boolean(false);
+        var click_count = 0;
+        var pic = document.getElementById('like');
+        var count = document.getElementById('click_count');
+        pic.addEventListener("mouseover", onhover);
+        pic.addEventListener("mouseout", hoverout);
+        pic.addEventListener("click", imgStatusAndcount);
+        function onhover() {
+            pic.src = "./svg/liked.svg";
+        }
+
+        function hoverout() {
+            if (ifclicked == false) {
+                pic.src = "./svg/like.svg";
+            } else {
+                pic.src = "./svg/liked.svg";
+            }
+        }
+
+        function imgStatusAndcount() {
+            click_count++;
+            if (click_count % 2 == 0) {
+                ifclicked = false;
+                pic.src = "./svg/like.svg";
+                count.style.backgroundColor = 'transparent';
+                count.style.color = 'black';
+            } else {
+                ifclicked = true;
+                pic.src = "./svg/liked.svg";
+                count.style.backgroundColor = '#5762D5';
+                count.style.color = 'white';
+            }
+           count.innerHTML = click_count;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

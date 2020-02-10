@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery_on</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#demo').on({
+				mouseenter: function(){
+					$(this).css("background-color","lightgrey");
+				},
+				mouseleave: function(){
+					$(this).css("background-color","transparent");
+				}
+			})
+		})
+		// $(document).ready(function(){
+		// 	$('#demo').on({
+		// 		mouseenter :function(){
+		// 			$(this).css("background-color","lightgrey");
+		// 		},
+		// 		mouseleave :function(){
+		// 			$(this).css("background-color","transparent");
+		// 		}
+		// 	});
+		// 	$('#hide').click(function(){
+		// 		$('#demo').hide();
+		// 	});
+		// });
+	</script>
+</head>
+<body>
+	<p id="demo">今天好一點</p>
+	<button id="hide">hide</button>
+</body>
+</html>

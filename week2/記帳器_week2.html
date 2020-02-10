@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>阿明的記帳器_week2</title>
+    <!-- bootstrapLink -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+    	.table{
+    		width: 50%;
+    	}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <table class="table table-striped">
+        <script>
+        	//輸入資料
+            const budget = parseInt(prompt("預算?"));
+            var items_name = [];
+            var items_price = [];
+            for(let i = 0; i < 2; i++){
+           		items_name.push(prompt("買了什麼?"));
+           		items_price.push(parseInt(prompt("花了多少錢?")));
+            }
+            //計算總金額&檢查有沒有爆預算
+            var total_price = 0;
+            var comment = "";
+            for (let i = 0; i < items_price.length; i++) {
+            	total_price += items_price[i];
+            }
+            if(total_price > budget){
+            	comment = "欸你爸在台北會傷心，雖然他讓高雄人傷心ＱＱ";
+            }else {
+            	comment = "讚！";
+            }
+            //輸出成表格
+            //購買項目
+        	document.write("<tr>");
+        	document.write("<th>"+"購買項目"+"</th>");
+            for (let i = 0; i < items_name.length; i++) {
+            	document.write("<td>"+items_name[i]+"</td>");
+            }
+            document.write("</tr>");
+            //購買金額
+  			document.write("<tr>");
+        	document.write("<th>"+"購買金額"+"</th>");
+            for (let i = 0; i < items_price.length; i++) {
+            	document.write("<td>"+items_price[i]+"</td>");
+            }
+            document.write("</tr>");
+            //比較預算和總花費
+    		document.write("<tr class=\"table-warning\">");
+    		document.write("<th>"+"總花費"+"</th>");
+    		document.write("<th colspan=\"2\">"+"預算"+"</th>");
+    		document.write("</tr>");
+
+    		document.write("<tr>");
+    		document.write("<td>"+total_price+"</td>");
+    		document.write("<td colspan=\"2\">"+budget+"</td>");
+    		document.write("</tr>");
+
+    		document.write("<tr class=\"table-danger\">");
+    		document.write("<td colspan=\"3\">"+comment+"</td>");
+    		document.write("</tr>");
+        </script>
+    </table>    
+    </div>
+    <!-- bootstrapCDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

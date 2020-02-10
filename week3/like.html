@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>like</title>
+</head>
+<body>
+	<img id="like" src="./png/like.png" onmouseover="onhover();" onmouseout="hoverout();" onclick="like_count();">
+	<p id="like_count">0</p>
+	<script>
+		//判斷有沒有按讚
+		var ifclicked = new Boolean(false);
+		//點按的次數
+		var click_count = 0;
+		var pic = document.getElementById("like");
+		function onhover(){
+			pic.src = "./png/liked.png";
+		}
+		function hoverout(){
+			if(ifclicked == false){
+				pic.src = "./png/like.png";
+			}else{
+				pic.src = "./png/liked.png";
+			}
+		}
+		function like_count(){
+			click_count++;
+			if(click_count % 2 != 0){
+				ifclicked = true;
+				pic.src = "./png/liked.png";
+			}else {
+				ifclicked = false;
+				pic.src = "./png/like.png";
+			}
+			document.getElementById('like_count').innerHTML = click_count;
+		}
+	</script>
+</body>
+</html>
